@@ -5,10 +5,19 @@ import '@unocss/reset/tailwind.css';
 import './styles/main.css';
 import 'uno.css';
 
-import router from './router';
+import { setupRouter } from './router';
+import { setupPinia } from './store';
 
-const app = createApp(App);
+function bootstrap() {
+  const app = createApp(App);
 
-app.use(router);
+  // vue-router
+  setupRouter(app);
 
-app.mount('#app');
+  // pinia
+  setupPinia(app);
+
+  app.mount('#app');
+}
+
+bootstrap();

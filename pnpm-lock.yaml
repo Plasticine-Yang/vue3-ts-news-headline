@@ -26,6 +26,7 @@ specifiers:
   husky: ^7.0.4
   jsdom: ^19.0.0
   lint-staged: ^12.4.0
+  pinia: ^2.0.13
   pnpm: ^6.32.6
   prettier: ^2.6.2
   qs: ^6.10.3
@@ -43,6 +44,7 @@ specifiers:
 dependencies:
   '@vueuse/core': 8.2.5_vue@3.2.31
   axios: 0.26.1
+  pinia: 2.0.13_hhks2xcoho7x4jrwn5stbz36vy
   qs: 6.10.3
   vue: 3.2.31
   vue-router: 4.0.14_vue@3.2.31
@@ -954,6 +956,10 @@ packages:
 
   /@vue/devtools-api/6.0.13:
     resolution: {integrity: sha512-T34EjcArVqzANedEZe2kXQ+AZsld2z1ptJlkOGm87+blk+s6udnP4ze/NYqV8lz1o9AIivimN0xxteLlWiWQdg==}
+    dev: false
+
+  /@vue/devtools-api/6.1.4:
+    resolution: {integrity: sha512-IiA0SvDrJEgXvVxjNkHPFfDx6SXw0b/TUkqMcDZWNg9fnCAHbTpoo59YfJ9QLFkwa3raau5vSlRVzMSLDnfdtQ==}
     dev: false
 
   /@vue/reactivity-transform/3.2.31:
@@ -4145,6 +4151,24 @@ packages:
     engines: {node: '>=0.10'}
     hasBin: true
     dev: true
+
+  /pinia/2.0.13_hhks2xcoho7x4jrwn5stbz36vy:
+    resolution: {integrity: sha512-B7rSqm1xNpwcPMnqns8/gVBfbbi7lWTByzS6aPZ4JOXSJD4Y531rZHDCoYWBwLyHY/8hWnXljgiXp6rRyrofcw==}
+    peerDependencies:
+      '@vue/composition-api': ^1.4.0
+      typescript: '>=4.4.4'
+      vue: ^2.6.14 || ^3.2.0
+    peerDependenciesMeta:
+      '@vue/composition-api':
+        optional: true
+      typescript:
+        optional: true
+    dependencies:
+      '@vue/devtools-api': 6.1.4
+      typescript: 4.6.3
+      vue: 3.2.31
+      vue-demi: 0.12.1_vue@3.2.31
+    dev: false
 
   /pluralize/8.0.0:
     resolution: {integrity: sha512-Nc3IT5yHzflTfbjgqWcCPpo7DaKy4FnpB0l/zCAW0Tc7jxAiuqSxHasntB3D7887LSrA93kDJ9IXovxJYxyLCA==}

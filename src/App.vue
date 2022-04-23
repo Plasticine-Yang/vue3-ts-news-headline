@@ -1,4 +1,4 @@
 <template>
   <Header></Header>
-  <router-view />
+  <router-view class="mt-10" />
 </template>
