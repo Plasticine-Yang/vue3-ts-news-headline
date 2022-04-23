@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "baseUrl": ".",
+    "baseUrl": "./",
     "module": "ESNext",
     "target": "es2016",
     "lib": ["DOM", "ESNext"],
@@ -14,9 +14,20 @@
     "strictNullChecks": true,
     "forceConsistentCasingInFileNames": true,
     "types": ["vite/client", "vite-plugin-pages/client"],
+    "typeRoots": ["./node_modules/@types", "./types"],
     "paths": {
-      "@/*": ["src/*"]
+      "@/*": ["src/*"],
+      "#/*": ["types/*"]
     }
   },
+  "include": [
+    "types/**/*.ts",
+    "types/**/*.d.ts",
+    "vite.config.ts",
+    "src/**/*.ts",
+    "src/**/*.d.ts",
+    "src/**/*.vue",
+    "**/*.d.ts"
+  ],
   "exclude": ["dist", "node_modules"]
 }
