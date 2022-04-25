@@ -1,4 +1,4 @@
-export type NewsListTypeParams =
+export type NewsType =
   | 'top'
   | 'guonei'
   | 'guoji'
@@ -24,9 +24,7 @@ export interface INewsData {
   is_content: string;
 }
 
-export interface INewsListResult {
-  stat: string;
-  data: INewsData[];
-  page: string;
-  pageSize: string;
+export interface INewsListInfo {
+  newsList: INewsData[];
+  hasMore: boolean;
 }

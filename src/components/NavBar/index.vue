@@ -19,13 +19,25 @@
 <script setup lang="ts">
   import { navList, curIndex } from './data';
   import NavItem from './NavItem.vue';
-  import { INavListItem } from './typing';
+  import { NewsType } from '@/api/newsList/typing';
   import { vActiveItem } from './derective';
+
+  const emit = defineEmits<{
+    (e: 'getNewsList', newsType: NewsType): void;
+  }>();
+
+  onMounted(() => {
+    emit('getNewsList', 'top');
+  });
 
   /**
    * @description 处理子组件 emit 的 change-item-index 事件
    */
-  const handleChangeItem = (index: number, item: INavListItem) => {
+  const handleChangeItem = (index: number, newsType: NewsType) => {
+    // 更新 curIndex
     curIndex.value = index;
+
+    // 将 item 传给父组件 Home，让 Home 去加载新闻列表
+    emit('getNewsList', newsType);
   };
 </script>

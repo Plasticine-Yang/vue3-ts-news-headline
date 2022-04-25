@@ -1,14 +1,13 @@
-import { NewsType } from './enums';
 import { INewsState } from './typing';
 
 const state: INewsState = {
-  currentType: NewsType.TOP,
-  newsList: {
+  currentNewsType: 'top',
+  newsListInfo: {
     hasMore: true,
     isLoading: false,
-    pageNum: 0,
-    count: 10,
-    news: [],
+    page: 1,
+    pageSize: 30,
+    newsList: [],
   },
 };
 

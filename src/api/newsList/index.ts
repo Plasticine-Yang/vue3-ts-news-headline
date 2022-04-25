@@ -1,6 +1,6 @@
 import { API } from '@/config/apiConfig';
 import { axiosGet } from '@/utils/http';
-import { INewsListResult, NewsListTypeParams } from './typing';
+import { INewsListInfo, NewsType } from './typing';
 import { IApiResult } from '../typing';
 
 /**
@@ -9,17 +9,12 @@ import { IApiResult } from '../typing';
  * @param pageCount 每次加载到页面上的新闻条数
  * @returns 新闻列表数据
  */
-export async function getNewsList(type: NewsListTypeParams, pageCount = 10) {
-  const data = await axiosGet<IApiResult<INewsListResult>>(API.GET_NEWS_LIST, { type });
+export async function getNewsList(type: NewsType, page = 1, pageSize = 30) {
+  const apiResult = await axiosGet<IApiResult<INewsListInfo>>(API.GET_NEWS_LIST, {
+    type,
+    page,
+    pageSize,
+  });
 
-  // 在前端将数据分页 -- 分成每页 10 条数据
-  let i = 0;
-  const resultData = data.result.data;
-  const pageData = [];
-
-  while (i < resultData.length) {
-    pageData.push(resultData.slice(i, (i += pageCount)));
-  }
-
-  return pageData;
+  return apiResult.data;
 }

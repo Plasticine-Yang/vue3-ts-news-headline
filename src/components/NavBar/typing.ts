@@ -1,8 +1,10 @@
+import { NewsType } from '@/api/newsList/typing';
+
 /**
  * @description 导航栏菜单项的类型
  */
 export interface INavListItem {
-  type: string;
+  type: NewsType;
   name: string;
 }
 
