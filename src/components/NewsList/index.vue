@@ -1,5 +1,5 @@
 <template>
-  <div class="news-list">
+  <div ref="newsListRef" class="news-list h-[85vh] overflow-scroll">
     <template v-for="item in newsListInfo.newsList">
       <!-- 没有图片 -->
       <NewsItem0 v-if="item && !item.thumbnail_pic_s" :key="item.uniquekey" :news-item="item" />
@@ -23,6 +23,7 @@
 
 <script setup lang="ts">
   import { INewsListInfo } from '@/store/home/typing';
+  import { useLoadingMore } from '@/composables';
   import NewsItem0 from './NewsItem/NewsItem0.vue';
   import NewsItem1 from './NewsItem/NewsItem1.vue';
   import NewsItem2 from './NewsItem/NewsItem2.vue';
@@ -31,6 +32,10 @@
   defineProps<{
     newsListInfo: INewsListInfo;
   }>();
+
+  const newsListRef = ref<HTMLElement | null>(null);
+
+  useLoadingMore(newsListRef);
 </script>
 
 <style scoped>

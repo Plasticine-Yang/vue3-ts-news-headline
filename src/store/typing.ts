@@ -1,0 +1,1 @@
+export type StoreId = 'home';

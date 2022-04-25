@@ -1,1 +1,1 @@
-export * from './useHeaderInfo';
+export * from './common';

@@ -18,7 +18,7 @@
 
 <script setup lang="ts">
   import { INewsData } from '@/api/newsList/typing';
-  import { useImgShow } from '@/composables/useImgShow';
+  import { useImgShow } from '@/composables';
 
   defineProps<{
     newsItem: INewsData;
