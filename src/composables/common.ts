@@ -1,7 +1,5 @@
 import { IHeaderInfo } from '#/header';
 import { headerRouteInfo } from '@/router/routeInfo';
-import { INewsState } from '@/store/home/typing';
-import type { Store } from 'pinia';
 import type { Ref } from 'vue';
 import _ from 'lodash';
 import useHomeStore from '@/store/home';
@@ -55,4 +53,9 @@ export function useLoadingMore(el: Ref<HTMLElement | null>) {
     newsListEl = el.value as HTMLElement;
     newsListEl.addEventListener('scroll', _.debounce(_loadMore, 300), false);
   });
+
+  return {
+    isLoading: computed(() => homeStore.newsListInfo.isLoading),
+    hasMore: computed(() => homeStore.newsListInfo.hasMore),
+  };
 }

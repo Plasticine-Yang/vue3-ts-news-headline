@@ -12,6 +12,8 @@ declare module '@vue/runtime-core' {
     NewsItem2: typeof import('./src/components/NewsList/NewsItem/NewsItem2.vue')['default']
     NewsItem3: typeof import('./src/components/NewsList/NewsItem/NewsItem3.vue')['default']
     NewsList: typeof import('./src/components/NewsList/index.vue')['default']
+    NewsListLoading: typeof import('./src/components/NewsList/NewsListLoading.vue')['default']
+    NewsListNoMore: typeof import('./src/components/NewsList/NewsListNoMore.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
   }
