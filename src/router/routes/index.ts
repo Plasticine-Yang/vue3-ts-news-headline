@@ -9,7 +9,7 @@ export const routes: RouteRecordRaw[] = [
     component: Home,
   },
   {
-    path: '/detail',
+    path: '/detail/:uniquekey/:pageFrom',
     name: 'Detail',
     component: () => import('@/pages/Detail.vue'),
   },
